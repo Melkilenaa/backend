@@ -1,0 +1,8 @@
+POST http://localhost:2607/notes/create-new
+Content-Type: application/json
+
+{
+    "title": "Run",
+    "content":"Take a run in the morning",
+    
+}

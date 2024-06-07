@@ -1,0 +1,5 @@
+CREATE OR ALTER PROCEDURE fetchallNotes
+AS 
+BEGIN
+SELECT * FROM stickynotes
+END
