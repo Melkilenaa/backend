@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE createnote(
+CREATE OR ALTER PROCEDURE dbo.createnote(
     @note_id VARCHAR(255),
     @title VARCHAR(255),
     @content VARCHAR(255),
@@ -9,3 +9,5 @@ BEGIN
     INSERT INTO stickynotes(note_id, title, content, created_at)
     VALUES(@note_id,@title,@content,@created_at)
 END
+GO
+DROP PROCEDURE createnote;

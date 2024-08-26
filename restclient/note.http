@@ -3,6 +3,5 @@ Content-Type: application/json
 
 {
     "title": "Run",
-    "content":"Take a run in the morning",
-    
+    "content":"Take a run in the morning"
 }

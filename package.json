@@ -4,8 +4,8 @@
   "main": "server.js",
   "scripts": {
     "start:build": "tsc --watch",
-    "start:run":"nodemon dist/server.js",
-    "start":"concurrently npm:start:*",
+    "start:run": "nodemon dist/server.js",
+    "start": "concurrently npm:start:*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

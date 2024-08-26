@@ -2,7 +2,7 @@ import mssql from 'mssql'
 import {v4} from 'uuid'
 import lodash from 'lodash'
 import { Notes } from '../interfaces/notes'
-import { sqlConfig } from '../config/sqlConfig'
+import { config } from '../config/sqlConfig'
 import Connection from '../dbhelpers/dbhelper'
 
 
@@ -10,27 +10,28 @@ export class NotesServices{
 
 
     async createNotes(notes:Notes){
-        let result = await (await Connection.execute("createnote",
-    {
-        note_id:v4(),
-        title:notes.title,
-        content:notes.content,
-        created_at: new Date().getTime().toString()})).rowsAffected
+        let result = (await Connection.execute("createnote",{
+                note_id: v4(),
+                title: notes.title,
+                content: notes.content,
+                created_at: new Date().getTime().toString()
+            })).rowsAffected
     
         if (result[0]= 1) {
             return{
               message:"Note created successfully"
             }
         }else {
-            error:"Unable to create this note: Try Agaain"
+        return{
+            error: "Unable to create this note: Try Agaain"
         }
     
     }
-
+    }
 
     async updateNotes(note_id:string, notes: Notes){
         try {
-            let pool = await mssql.connect(sqlConfig);
+            let pool = await mssql.connect(config);
             let nooteExists=(await pool.request().execute("selectOne")).recordset
         
 
@@ -69,7 +70,7 @@ export class NotesServices{
 
     async fetchAllNotes(){
         try {
-            let pool = await mssql.connect(sqlConfig);
+            let pool = await mssql.connect(config);
             let response = (await pool.request().execute("fetchallNotes")).recordset;
             
                 return{data:response}
@@ -82,7 +83,7 @@ export class NotesServices{
 
     async fetchone(note_id:string){
         try {
-            let pool = await mssql.connect(sqlConfig);
+            let pool = await mssql.connect(config);
             let response =(await pool.request().execute("selectOne")).recordset
             if (response.length<1) {
                 return{
@@ -100,7 +101,7 @@ export class NotesServices{
         }
     }
     async deleteNote(note_id:string){
-        let pool = await mssql.connect(sqlConfig)
+        let pool = await mssql.connect(config)
         let response = (await pool.request().execute("selectOne")).recordset
         try{
         if(response.length < 1){
