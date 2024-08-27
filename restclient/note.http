@@ -4,4 +4,26 @@ Content-Type: application/json
 {
     "title": "Run",
     "content":"Take a run in the morning"
+    
 }
+
+###
+GET http://localhost:2607/notes/all
+Content-Type: application/json
+
+###
+GET http://localhost:2607/notes/3ce24535-6629-45c5-ab62-8082e1a1e17a
+Content-Type: application/json
+
+###
+DELETE http://localhost:2607/notes/delete/06b2458a-8ecd-489d-9e15-e4f1d49e7cf3
+Content-Type: application/json
+
+###
+PUT http://localhost:2607/notes/update/3ce24535-6629-45c5-ab62-8082e1a1e17a
+Content-Type: application/json
+
+{
+    "title": "Quick",
+    "content":"Take a run in the morning and evening"
+}   

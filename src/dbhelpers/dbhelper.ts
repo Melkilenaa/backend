@@ -9,20 +9,21 @@ export default class Connection{
 
         return request
     }
-
-
-    static async execute(procedureName:string, data:{[c:string |number]: string |number}) {
-        const pool =mssql.connect(config) as Promise<mssql.ConnectionPool>
-
-        let request =((await pool). request()) as mssql.Request
-
-        for (let key in data){
-            request.input(key, data[key])
-
+    static async execute(procedureName: string, data: { [c: string | number]: string | number | Date }) {
+        const pool = await mssql.connect(config) as mssql.ConnectionPool;
+        let request = pool.request() as mssql.Request;
+    
+        for (let key in data) {
+            let value = data[key];
+            if (value instanceof Date) {
+                value = value.toISOString();
+            }
+            
+            request.input(key, value);
         }
-        const result = await request.execute(procedureName)
-
-        return result
+        
+        const result = await request.execute(procedureName);
+        return result;
     }
-
+    
 }

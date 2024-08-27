@@ -14,10 +14,11 @@ export const config = {
     trustServerCertificate: true 
   }
 };
-
-sql.connect(config).then(pool => {
-  console.log('Connected to SQL Server');
-}).catch(err => {
-  console.error('Database connection failed:', err);
-});
+sql.connect(config)
+  .then(() => {
+    console.log('Connected to SQL Server');
+  })
+  .catch((err :any ) => {
+    console.error('Error connecting to SQL Server', err);
+  });
 
