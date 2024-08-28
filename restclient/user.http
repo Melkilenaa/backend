@@ -1,0 +1,31 @@
+###
+POST http://localhost:2607/user/createUser
+Content-Type: application/json
+
+{
+    "name": "Bryther Doe",
+    "email": "breatherdoe@gmail.com",
+    "password": "password023"
+}
+
+###
+PUT http://localhost:2607/user/update/359940a6-f755-42dd-adae-6f7047e8c33d
+Content-Type: application/json
+
+{
+"name": "Bryther Doe",
+    "email": "breatherdoe@gmail.com",
+    "password": "password023"
+    }
+
+###
+GET http://localhost:2607/user/fetchall
+Content-Type: application/json
+
+###
+GET http://localhost:2607/user/get/359940a6-f755-42dd-adae-6f7047e8c33d
+Content-Type: application/json
+
+###
+DELETE http://localhost:2607/user/delete/1ddd8bd2-5b3c-4d7d-989a-15f2025663f9
+Content-Type: application/json

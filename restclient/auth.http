@@ -1,0 +1,13 @@
+###
+POST http://localhost:2607/auth/login
+Content-Type: application/json
+
+{
+    "email": "johndoe@gmail.com",
+    "password": "password"
+}
+
+###
+GET http://localhost:2607/auth/checkDetails
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgyOTQ0MTYxLThhMzAtNDE0OS05ODRhLTg4OTliYTRiM2U4NCIsIm5hbWUiOiJKb2huIERvZSIsImVtYWlsIjoiam9obmRvZUBnbWFpbC5jb20iLCJ1cGRhdGVkQXQiOiIyMDI0LTA4LTI4VDE0OjIxOjA2LjA0OVoiLCJpYXQiOjE3MjQ4NTk0NTgsImV4cCI6MTcyNDg2NjY1OH0.-zCHvWy7RXOiljLer0MtUBqHWiwli_jlSWQFUsgwkd0

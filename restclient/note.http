@@ -12,7 +12,7 @@ GET http://localhost:2607/notes/all
 Content-Type: application/json
 
 ###
-GET http://localhost:2607/notes/3ce24535-6629-45c5-ab62-8082e1a1e17a
+GET http://localhost:2607/notes/all/3ce24535-6629-45c5-ab62-8082e1a1e17a
 Content-Type: application/json
 
 ###

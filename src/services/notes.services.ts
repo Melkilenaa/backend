@@ -58,7 +58,6 @@ export class NotesServices {
         };
       }
     } catch (error) {
-      console.error(error); // Log the error for debugging purposes
       return {
         error: "Try again, The action was unsuccessful",
       };
