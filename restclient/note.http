@@ -2,7 +2,7 @@ POST http://localhost:2607/notes/create-new
 Content-Type: application/json
 
 {
-    "title": "Run",
+    "title": "Climb",
     "content":"Take a run in the morning"
     
 }
